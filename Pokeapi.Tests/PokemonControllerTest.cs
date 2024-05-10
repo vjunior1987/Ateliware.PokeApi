@@ -17,7 +17,6 @@ namespace Pokeapi.Tests
             pokemonController = new PokemonController(pokemonService);
         }
 
-
         [Fact]
         public async Task Should_Call_PokemonService_With_Correct_Parameters_When_Requesting_Stronger_Pokemon()
         {
@@ -48,7 +47,6 @@ namespace Pokeapi.Tests
             Assert.IsType<OkObjectResult>(result);
         }
 
-
         [Fact]
         public async Task Should_Return_Pokemon_Name_When_Request_Is_Successful()
         {
@@ -63,7 +61,6 @@ namespace Pokeapi.Tests
             // Assert
             Assert.Contains(poke2, result?.Value as string);
         }
-
 
         [Theory]
         [InlineData("", null)]
@@ -80,7 +77,6 @@ namespace Pokeapi.Tests
             // Assert
             Assert.IsType<BadRequestObjectResult>(result);
         }
-
 
         [Fact]
         public async void Should_Return_NotFound_If_One_Pokemon_Could_Not_Be_Found()
