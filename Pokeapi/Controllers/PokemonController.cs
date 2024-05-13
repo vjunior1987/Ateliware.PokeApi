@@ -14,6 +14,13 @@ namespace Pokeapi.Controllers
             _service = service;
         }
 
+
+        /// <summary>
+        /// Endpoint that will take two pokémon names and compare which has more HP
+        /// </summary>
+        /// <param name="poke1">Name of the first pokémon</param>
+        /// <param name="poke2">Name of the second pokémon</param>
+        /// <returns>A string explaining which pokémon is stronger based on hp, a tie between two pokémon, whether or not the pokémon are the same, or an error message</returns>
         [HttpGet]
         public async Task<IActionResult> GetStrongerPokemon(string poke1, string poke2)
         {

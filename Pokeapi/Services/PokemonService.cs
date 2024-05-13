@@ -45,8 +45,8 @@ namespace Pokeapi.Services
             var poke1Hp = 0;
             var poke2Hp = 0;
 
-            var poke1Result = await _client.GetAsync($"{_url}{poke1}");
-            var poke2Result = await _client.GetAsync($"{_url}{poke2}");
+            var poke1Result = await _client.GetAsync($"{_url}{poke1.ToLowerInvariant().Trim()}");
+            var poke2Result = await _client.GetAsync($"{_url}{poke2.ToLowerInvariant().Trim()}");
 
             if (poke1Result.IsSuccessStatusCode && poke2Result.IsSuccessStatusCode)
             {
@@ -66,7 +66,7 @@ namespace Pokeapi.Services
                 }
                 if (poke1Hp == poke2Hp)
                 {
-                    return $"It is a tie between {poke1} and {poke2}!";
+                    return $"It is a tie between {poke1} and {poke2} with {poke1Hp}HP!";
                 }
                 return poke1Hp > poke2Hp ? $"The stronger pokémon is {poke1} with {poke1Hp}HP" : $"The stronger pokémon is {poke2} with {poke2Hp}HP";
             }
