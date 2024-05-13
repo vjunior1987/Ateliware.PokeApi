@@ -34,4 +34,10 @@ Using Swagger
 
 The API documentation was implemented with swagger as part of the Visual Studio webAPI project. 
 
-Testing the endpoint can be done by opening the documentation and clicking the try it button. Swagger will ask for two pokémon names as parameters and handle the http request.
+Testing the endpoint can be done by expanding the tab of the endpoint documentation and clicking the `try it out` button. Swagger will ask for two pokémon names as parameters and handle the http request.
+
+![image](https://github.com/vjunior1987/Ateliware.Pokeapi/assets/45671294/e826a541-a550-4ae0-b3ce-2efb96b68fff)
+
+Input the two pokémon names and click execute
+
+![image](https://github.com/vjunior1987/Ateliware.Pokeapi/assets/45671294/7edf8fa3-1105-4b8f-8e8d-6a894568fa43)
