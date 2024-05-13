@@ -3,6 +3,9 @@ using Pokeapi.Utils;
 
 namespace Pokeapi.Services
 {
+    /// <summary>
+    /// Using service architecture to implement the API call in a separate class, to comply with SOLID principles for better software design
+    /// </summary>
     public class PokemonService : IPokemonService
     {
         private readonly string _url;
@@ -13,12 +16,25 @@ namespace Pokeapi.Services
             _client = client;
         }
 
+        /// <summary>
+        /// This constructor was included in order to mock the httpClient and pass a custom url for testing.
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="url"></param>
         public PokemonService(IHttpClientWrapper client, string url)
         {
             _url = url;
             _client = client;
         }
 
+        /// <summary>
+        /// This method will compare two pokémon to determine which has the most HP
+        /// </summary>
+        /// <param name="poke1"></param>
+        /// <param name="poke2"></param>
+        /// <returns></returns>
+        /// <exception cref="KeyNotFoundException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
         public async Task<string> GetStrongerPokemonNameAsync(string poke1, string poke2)
         {
             if (poke1 == poke2)
